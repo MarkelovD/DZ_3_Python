@@ -32,13 +32,26 @@
 
 # Задайте список из вещественных чисел.
 #  Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
-import random
-listNum = [round(random.uniform(0,20),2)for i in range (random.randint(5,10))]
-drobnayChast = []
-print(listNum)
-for i in listNum:
-    i=round((i%1),2)
-    drobnayChast.append(i)
-print(drobnayChast)
-raznica = round(max(drobnayChast)-min(drobnayChast),2)
-print(f"разница между минимальной дробной частью {max(drobnayChast)} и минимальной дробной частью {min(drobnayChast)} = {raznica}")
+# import random
+# listNum = [round(random.uniform(0,20),2)for i in range (random.randint(5,10))]
+# drobnayChast = []
+# print(listNum)
+# for i in listNum:
+#     i=round((i%1),2)
+#     drobnayChast.append(i)
+# print(drobnayChast)
+# raznica = round(max(drobnayChast)-min(drobnayChast),2)
+# print(f"разница между минимальной дробной частью {max(drobnayChast)} и минимальной дробной частью {min(drobnayChast)} = {raznica}")
+
+# Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+# для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
+lenght = 8
+positiv = [0,1]
+negative = [0,1]
+for i in range (lenght-1):
+    positiv.append(positiv[-2]+positiv[-1])
+print(positiv)
+for i in range(lenght-1):
+     negative.append((negative[-2]-negative[-1]))
+print(negative)
+print(negative[::-1]+positiv[1::])
