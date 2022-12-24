@@ -19,13 +19,26 @@
 # print(b)
 
 #Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-nums = int(input("введите число в десятичном формате: "))
-stroka=""
-while nums>-1:
-    a=nums%2
-    nums=nums//2
-    stroka+=str(a)
-    if nums==0:
-        break
-reversSroka="".join(reversed(stroka))
-print(reversSroka)
+# nums = int(input("введите число в десятичном формате: "))
+# stroka=""
+# while nums>-1:
+#     a=nums%2
+#     nums=nums//2
+#     stroka+=str(a)
+#     if nums==0:
+#         break
+# reversSroka="".join(reversed(stroka))
+# print(reversSroka)
+
+# Задайте список из вещественных чисел.
+#  Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+import random
+listNum = [round(random.uniform(0,20),2)for i in range (random.randint(5,10))]
+drobnayChast = []
+print(listNum)
+for i in listNum:
+    i=round((i%1),2)
+    drobnayChast.append(i)
+print(drobnayChast)
+raznica = round(max(drobnayChast)-min(drobnayChast),2)
+print(f"разница между минимальной дробной частью {max(drobnayChast)} и минимальной дробной частью {min(drobnayChast)} = {raznica}")
